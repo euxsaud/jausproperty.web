@@ -1,8 +1,7 @@
 // Generated using webpack-cli https://github.com/webpack/webpack-cli
 
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const PugPlugin = require("pug-plugin");
 
 module.exports = (env, argv) => {
     const { mode } = argv;
@@ -11,24 +10,20 @@ module.exports = (env, argv) => {
     return {
         mode: isProd ? "production" : "development",
 
-        entry: "./src/index.js",
+        entry: {
+            index: "./src/index.pug",
+        },
 
         output: {
-            filename: isProd ? "[name].[contenthash].js" : "main.js",
+            filename: isProd ? "js/[name].[contenthash:8].js" : "main.js",
             path: path.resolve(__dirname, "build"),
         },
 
-        // devTool: isDev ? "source-map" : "none",
-
         plugins: [
-            new HtmlWebpackPlugin({
-                template: path.resolve(__dirname, "src/index.pug"),
-                filename: "index.html",
-            }),
-
-            new MiniCssExtractPlugin({
-                filename: isProd ? "[name].[contenthash].css" : "[name].css",
-                chunkFilename: isProd ? "[name].[contenthash].css" : "[name].css",
+            new PugPlugin({
+                extractCss: {
+                    filename: isProd ? "css/[name].[contenthash:8].css" : "[name].css",
+                },
             }),
         ],
 
@@ -36,7 +31,10 @@ module.exports = (env, argv) => {
             rules: [
                 {
                     test: /\.pug$/i,
-                    loader: "@webdiscus/pug-loader",
+                    loader: PugPlugin.loader,
+                    options: {
+                        method: "render",
+                    },
                 },
                 {
                     test: /\.(js|jsx)$/i,
@@ -46,12 +44,8 @@ module.exports = (env, argv) => {
                     },
                 },
                 {
-                    test: /\.s[ac]ss$/i,
-                    use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader", "sass-loader"],
-                },
-                {
-                    test: /\.css$/i,
-                    use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
+                    test: /\.(css|sass|scss)$/i,
+                    use: ["css-loader", "sass-loader"],
                 },
                 {
                     test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
