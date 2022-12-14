@@ -9,6 +9,8 @@ module.exports = (env, argv) => {
     const isProd = mode === "production";
 
     return {
+        mode: isProd ? "production" : "development",
+
         entry: "./src/index.js",
 
         output: {
@@ -20,7 +22,8 @@ module.exports = (env, argv) => {
 
         plugins: [
             new HtmlWebpackPlugin({
-                template: "./src/index.html",
+                template: path.resolve(__dirname, "src/index.pug"),
+                filename: "index.html",
             }),
 
             new MiniCssExtractPlugin({
@@ -32,6 +35,10 @@ module.exports = (env, argv) => {
         module: {
             rules: [
                 {
+                    test: /\.pug$/i,
+                    loader: "@webdiscus/pug-loader",
+                },
+                {
                     test: /\.(js|jsx)$/i,
                     loader: "babel-loader",
                     options: {
@@ -39,12 +46,12 @@ module.exports = (env, argv) => {
                     },
                 },
                 {
-                    test: /\.css$/i,
-                    use: [MiniCssExtractPlugin.loader, "style-loader", "css-loader"],
+                    test: /\.s[ac]ss$/i,
+                    use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader", "sass-loader"],
                 },
                 {
-                    test: /\.s[ac]ss$/i,
-                    use: [MiniCssExtractPlugin.loader, "style-loader", "css-loader", "sass-loader"],
+                    test: /\.css$/i,
+                    use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
                 },
                 {
                     test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
