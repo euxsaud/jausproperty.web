@@ -1,1 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 @import 'materialize-css/dist/css/materialize.min.css';
+@import './vars.scss';
+
+:root {
+    --background: #{$background};
+}
+
+html, body {
+    background-color: var(--background);
+    font-family: $font-family;
+    font-size: $fz-default;
+}
+
+@import './commons.scss';
+
+#nav-site {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: transparent;
+
+    .logo {
+        display: block;
+        width: auto;
+        height: 100%;
+
+        img {
+            display: block;
+            width: auto;
+            height: 100%;
+        }
+    }
+}

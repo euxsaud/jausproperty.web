@@ -1,0 +1,14 @@
+// Containers
+.main-container {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.sec-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+}

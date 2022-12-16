@@ -19,6 +19,12 @@ module.exports = (env, argv) => {
             path: path.resolve(__dirname, "build"),
         },
 
+        target: "web",
+
+        devServer: {
+            hot: false,
+        },
+
         plugins: [
             new PugPlugin({
                 extractCss: {

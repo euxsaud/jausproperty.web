@@ -8,4 +8,15 @@ html(lang="en")
         link(href=require("styles/index.scss") rel="stylesheet")
         script(src=require("index.js") defer="defer")
     body 
-        h1 Hola mundo 2
+        main.main-container
+            nav#nav-site
+                a(hrer="#").logo
+                    img(src=require('./assets/logo-inline.svg')).responsive-img
+                div.link-list
+                    a(href="#home")
+                    a(href="#services")
+                    a(href="#partners")
+                    a(href="#contact")
+            
+            section.sec-container
+                div.container
