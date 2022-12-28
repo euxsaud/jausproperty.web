@@ -1,0 +1,20 @@
+/* --------------------------------------------------------
+ *                 Text style & distribution
+ * ------------------------------------------------------- */
+
+ // Text-align
+ .text-left { text-align: left; }
+ .text-center { text-align: center; }
+ .text-right { text-align: right; }
+
+ // Font Weight
+ @each $weight in (100, 200, 300, 400, 500, 600, 700, 800, bold, bolder, lighter, inherit) {
+     .fw-#{$weight} {
+         font-weight: $weight;
+     }
+ }
+ 
+ // font sizes
+ @each $key, $val in $fz-list {
+     .#{$key} { font-size: $val; }
+ }

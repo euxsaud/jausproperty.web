@@ -1,0 +1,17 @@
+.anim-rotate {
+    $timingFuncion: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation: rotate 3s $timingFuncion infinite;
+    transition-timing-function: $timingFuncion;
+}
+
+@keyframes rotate {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+    50% {
+        transform: scale(0.7) rotate(180deg);
+    }
+    100% {
+        transform: scale(1) rotate(360deg);
+    }
+}

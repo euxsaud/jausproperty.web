@@ -1,0 +1,31 @@
+/* --------------------------------------------------------
+ *              Custom materialize components
+ * ------------------------------------------------------- */
+
+// Custom waves
+.waves-effect {
+    &.waves-primary .waves-ripple {
+        background-color: rgba($primary, 0.5);
+    }
+}
+
+// Buttons
+*[class*='btn'] {
+    border-radius: 50px;
+
+    &.btn-tense {
+        padding-left: 36px;
+        padding-right: 36px;
+    }
+    
+    &.btn-primary {
+        background-color: $primary;
+    }
+
+    &.btn-primary-outlined {
+        background: transparent;
+        border: 1px solid $primary;
+        color: $primary;
+        box-shadow: none;
+    }
+}

@@ -4,8 +4,8 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Document
-        link(href=require("styles/index.scss") rel="stylesheet")
+        title JAUS Property Services
+        link(href=require("styles/main.scss") rel="stylesheet")
         script(src=require("index.js") defer="defer")
     body 
         main.main-container
@@ -13,10 +13,33 @@ html(lang="en")
                 a(hrer="#").logo
                     img(src=require('./assets/logo-inline.svg')).responsive-img
                 div.link-list
-                    a(href="#home")
-                    a(href="#services")
-                    a(href="#partners")
-                    a(href="#contact")
+                    a(href="#home").waves-effect.waves-primary Home
+                    a(href="#services").waves-effect.waves-primary Services
+                    a(href="#partners").waves-effect.waves-primary Partners
+                    a(href="#contact").waves-effect.waves-primary Contact
             
-            section.sec-container
-                div.container
+            section#home.sec-container
+                div.container.d-flex.flex-wrap
+                    div.home-box1.w-6.d-flex.flex-wrap.align-center.content-center
+                        div.w-12.text-right: img(src=require('./assets/icon-spark.svg')).icon-spark.anim-rotate
+                        h1.w-12.my-0.mb-25px
+                            span.d-block.fw-800.secondary You are in
+                            span.d-block.fw-800.primary good hands
+                        div.w-12.d-flex.justify-between.align-center
+                            img(src=require('./assets/icon-sparks.svg')).col.s3
+                            p.m-0.ml-10px.h6 Complete solutions for all od your commertial cleaning service need.
+                        div.mt-20px
+                            a(href="#services").btn-large.btn-primary.waves-effect Our best offers
+                    
+                    div.home-box2.w-6
+                        img(src=require('./assets/bubble-ball.svg')).img-bubble
+                        img(src=require('./assets/hands.png')).responsive-img.img-hands
+
+                    div.w-12.d-flex.justify-end.separator
+                        hr
+                        div.contact-box.text-center
+                            span.d-block.body2.primary Call or text us for any question:
+                            span.d-block.h4.fw-800
+                                span.primary 608-
+                                span.secondary 877-2343
+            include ./pug/index-services.part.pug

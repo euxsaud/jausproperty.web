@@ -2,21 +2,35 @@
 $background: white;
 $background-alt: #fafafa;
 $background-paper: white;
+$text-primary: rgba(black, 0.87);
 
 $primary: #00652e;
 $primary-light: #409458;
 $primary-dark: #003905;
 $primary-ultraLight: #409458;
+$secondary: #616061;
+$secondary-light: #8e8d8e;
+$secondary-dark: #373637;
 
 // Schema set font style
 $font-family: 'Montserrat', sans-serif;
-$fz-default: 14px;
-$fzH1: 6rem;
-$fzH2: 3.75rem;
-$fzH3: 3rem;
-$fzH4: 2.15rem;
-$fzH5: 1.5rem;
-$fzH6: 1.25rem;
-$fzBody1: 1rem;
-$fzBody2: 0.875rem;
-$fzCaption: 0.75rem;
+$fz-default: 16px;
+$fz-list: (
+    "h1": 6rem,
+    "h2": 3.75rem,
+    "h3": 3rem,
+    "h4": 2.15rem,
+    "h5": 1.5rem,
+    "h6": 1.25rem,
+    "body1": 1rem,
+    "body2": 0.875rem,
+    "caption": 0.75rem
+);
+
+// Media Query Ranges
+$media-query-list: (
+    'xs': 320px,
+    'sm': 600px,
+    'md': 992px,
+    'lg': 1200px
+)

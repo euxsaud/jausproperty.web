@@ -1,0 +1,39 @@
+- const servicesSlides = [
+    {
+        img: './assets/icon-carpet.svg',
+        title: 'Carpet',
+        caption: 'We use high-quality techniques and equipment to remove dirt, stains, and odors from your carpets, leaving them clean and fresh.'
+    },
+    {
+        img: './assets/icon-kitchen.svg',
+        title: 'Kitchen',
+        caption: 'Sin descripcion por le momento'
+    }
+];
+section#services.sec-container
+    div.container
+        div.part1
+            p.h6.primary.fw-800.m-0 Services
+            h2.h3.secondary.fw-800.m-0.mb-15px What we do?
+            a(href="#contact").btn.btn-primary-outlined.btn-tense.waves-effect Book now
+        div.part2
+            span.layout
+            p.text.w-8.mt-30px.body2 We do Weekly inspections, don't sub-contract, and have more than five years of experience in the following cleaning services
+            div.splide
+                div.splide__track
+                    ul.splide__list
+                    each val in servicesSlide
+                        li.splide__slide
+                //- a(href="#one!").carousel-item
+                //-     div.surface
+                //-         div.d-block.w-12.p-20px.text-center: img(src=require('./assets/icon-kitchen.svg'))
+                //-         p.m-0.mb-5px.text-center Kitchen
+                //- a(href="#two!").carousel-item
+                //-     div.surface
+                //-         div.d-block.w-12.p-20px.text-center: img(src=require('./assets/icon-carpet.svg'))
+                //-         p.m-0.mb-5px.text-center Carpet
+                //-         p.m-0.p-10px.caption 
+                //- a(href="#three!").carousel-item
+                //-     div.surface
+                //- a(href="#four!").carousel-item
+                //-     div.surface

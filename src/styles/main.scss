@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@import 'materialize-css/dist/css/materialize.min.css';
+@import '@splidejs/splide/dist/css/splide.min.css';
+@import '@splidejs/splide/dist/css/themes/splide-default.min.css';
+// @import 'animate.css/animate.min.css';
+@import './vars.scss';
+
+:root {
+    --background: #{$background};
+    --textPrimary: #{$text-primary};
+    --primary: #{$primary};
+}
+
+html, body {
+    background-color: var(--background);
+    font-family: $font-family;
+    font-size: $fz-default;
+    color: var(--textPrimary);
+}
+
+// Imports: Commons
+@import './commons/colors.scss';
+@import './commons/animations.scss';
+@import './commons/text-styles.scss';
+@import './commons/inherit-reset.scss';
+@import './commons/custom-components.scss';
+@import './commons/display-containers.scss';
+
+@import './$basis-styles.scss';
+@import './index.scss';
