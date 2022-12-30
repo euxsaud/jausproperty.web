@@ -29,3 +29,16 @@
         box-shadow: none;
     }
 }
+
+// Inputs
+.input-control {
+    display: block;
+    width: 100%;
+    min-height: 44px;
+    background-color: $background-alt !important;
+    border-radius: 50px !important;
+    border: none !important;
+}
+textarea.input-control {
+    min-height: 200px;
+}

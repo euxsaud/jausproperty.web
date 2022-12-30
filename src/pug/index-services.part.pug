@@ -1,15 +1,3 @@
-- const servicesSlides = [
-    {
-        img: './assets/icon-carpet.svg',
-        title: 'Carpet',
-        caption: 'We use high-quality techniques and equipment to remove dirt, stains, and odors from your carpets, leaving them clean and fresh.'
-    },
-    {
-        img: './assets/icon-kitchen.svg',
-        title: 'Kitchen',
-        caption: 'Sin descripcion por le momento'
-    }
-];
 section#services.sec-container
     div.container
         div.part1
@@ -22,18 +10,19 @@ section#services.sec-container
             div.splide
                 div.splide__track
                     ul.splide__list
-                    each val in servicesSlide
                         li.splide__slide
-                //- a(href="#one!").carousel-item
-                //-     div.surface
-                //-         div.d-block.w-12.p-20px.text-center: img(src=require('./assets/icon-kitchen.svg'))
-                //-         p.m-0.mb-5px.text-center Kitchen
-                //- a(href="#two!").carousel-item
-                //-     div.surface
-                //-         div.d-block.w-12.p-20px.text-center: img(src=require('./assets/icon-carpet.svg'))
-                //-         p.m-0.mb-5px.text-center Carpet
-                //-         p.m-0.p-10px.caption 
-                //- a(href="#three!").carousel-item
-                //-     div.surface
-                //- a(href="#four!").carousel-item
-                //-     div.surface
+                            img(src=require('../assets/icon-carpet.svg'))
+                            b Carpet
+                            p.caption We use high-quality techniques and equipment to remove dirt, stains, and odors from your carpets, leaving them clean and fresh.
+                        li.splide__slide
+                            img(src=require('../assets/icon-kitchen.svg'))
+                            b Kitchen
+                            p.caption  We use high-quality products and effective techniques to remove accumulated grease and dirt on your countertops, appliances, floors, and other areas of your kitchen.
+                        li.splide__slide
+                            img(src=require('../assets/icon-window.svg'))
+                            b Window
+                            p.caption  We use high-quality products and techniques to effectively remove dirt, streaks, and smudges from the interior and exterior of your windows, leaving them sparkling clean.
+                        li.splide__slide
+                            img(src=require('../assets/icon-pressWasher.svg'))
+                            b Pressure Washing
+                            p.caption  Using high-pressure water and specialized cleaning solutions, we can effectively remove dirt, grime, and stains from a range of surfaces including concrete, brick, wood, and more.

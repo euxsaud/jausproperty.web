@@ -6,9 +6,12 @@ import Splide from "@splidejs/splide";
 // Set fuction to run Splice Carousel, because Materialize Carousel is a piece of shit.
 function SplideSlide() {
     const options = {
+        perPage: 3,
         type: "loop",
-        perPage: 4,
         arrows: false,
+        gap: 10,
+        focus: "center",
+        autoplay: true,
     };
 
     const splideOne = new Splide(".splide", options);
