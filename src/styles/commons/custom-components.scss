@@ -38,6 +38,12 @@
     background-color: $background-alt !important;
     border-radius: 50px !important;
     border: none !important;
+
+    &:focus {
+        outline: none !important;
+        border: none !important;
+        box-shadow: rgba(black, 0.3) 0 2px 3px !important;
+    }
 }
 textarea.input-control {
     min-height: 200px;
