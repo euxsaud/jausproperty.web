@@ -79,8 +79,54 @@ function NavControl() {
     });
 }
 
+function AddBubbles() {
+    const ColumLeft = document.createElement("div");
+    const ColumRight = document.createElement("div");
+    var bodyHeight = document.body.offsetHeight;
+
+    // Method to set height about the total scroll document
+    const setHeightCols = () => {
+        setTimeout(() => {
+            bodyHeight = document.body.offsetHeight;
+            ColumLeft.style.height = bodyHeight + "px";
+            ColumRight.style.height = bodyHeight + "px";
+        }, 200);
+    };
+
+    // Listener if the viewport of device change
+    window.addEventListener("resize", setHeightCols);
+
+    // Add classes and other attributes for colums bubbles.
+    ColumLeft.classList.add("colum-bubble", "left");
+    ColumRight.classList.add("colum-bubble", "right");
+    setHeightCols();
+
+    // Append in the document
+    [ColumLeft, ColumRight].forEach((elem) => document.body.append(elem));
+
+    // Adding bubbles
+    const bubbleSizes = ["lg", "md", "sm"];
+    const iterations = 10;
+    for (let i = 0; i < iterations; i++) {
+        let bubble = document.createElement("span");
+        let getRandomPosition = Math.floor(Math.random() * (100 - 0 + 1) + 0);
+        let getSizeBubble = bubbleSizes[Math.floor(Math.random() * bubbleSizes.length)];
+
+        bubble.classList.add(getSizeBubble);
+        bubble.classList.add(i % 2 ? "light" : "dark");
+        bubble.style.top = getRandomPosition + "%";
+
+        if (i < iterations / 2) {
+            ColumLeft.appendChild(bubble);
+        } else {
+            ColumRight.appendChild(bubble);
+        }
+    }
+}
+
 // Starting when document is ready
 document.addEventListener("DOMContentLoaded", () => {
     SplideSlide();
     NavControl();
+    AddBubbles();
 });
