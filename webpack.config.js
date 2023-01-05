@@ -2,6 +2,7 @@
 
 const path = require("path");
 const PugPlugin = require("pug-plugin");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 module.exports = (env, argv) => {
     const { mode } = argv;
@@ -26,6 +27,8 @@ module.exports = (env, argv) => {
         },
 
         plugins: [
+            new CleanWebpackPlugin(),
+
             new PugPlugin({
                 extractCss: {
                     filename: isProd ? "css/[name].[contenthash:8].css" : "[name].css",
