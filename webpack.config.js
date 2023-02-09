@@ -2,7 +2,7 @@
 
 const path = require("path");
 const PugPlugin = require("pug-plugin");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = (env, argv) => {
     const { mode } = argv;
