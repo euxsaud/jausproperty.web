@@ -1,0 +1,50 @@
+/* --------------------------------------------------------
+ *              Custom materialize components
+ * ------------------------------------------------------- */
+
+// Custom waves
+.waves-effect {
+    &.waves-primary .waves-ripple {
+        background-color: rgba($primary, 0.5);
+    }
+}
+
+// Buttons
+*[class*='btn'] {
+    border-radius: 50px;
+
+    &.btn-tense {
+        padding-left: 36px;
+        padding-right: 36px;
+    }
+    
+    &.btn-primary {
+        background-color: $primary;
+    }
+
+    &.btn-primary-outlined {
+        background: transparent;
+        border: 1px solid $primary;
+        color: $primary;
+        box-shadow: none;
+    }
+}
+
+// Inputs
+.input-control {
+    display: block;
+    width: 100%;
+    min-height: 44px;
+    background-color: $background-alt !important;
+    border-radius: 50px !important;
+    border: none !important;
+
+    &:focus {
+        outline: none !important;
+        border: none !important;
+        box-shadow: rgba(black, 0.3) 0 2px 3px !important;
+    }
+}
+textarea.input-control {
+    min-height: 200px;
+}

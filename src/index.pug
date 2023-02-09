@@ -1,0 +1,33 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(name="description" content="We are professional cleaning and maintenance services for businesses, hospitals, restaurants, etc.")
+        meta(name="keywords" content="Professional cleaning,Maintenance services,Carpet cleaning,Kitchen cleaning,Window cleaning,Water gun cleaning,Hard floor care,Disinfection,Hood and exhaust cleaning,Construction clean-up,Commercial cleaning Industrial cleaning,Residential cleaning,Office cleaning,Restaurant cleaning,Hospital cleaning,School cleaning,Gym cleaning,Warehouse cleaning,Retail store cleaning,Hotel cleaning,Event cleaning,Emergency cleaning,Pressure washing,Graffiti removal,Odor removal,Stain removal,Eco-friendly products,Safe cleaning,Customized cleaning programs")
+        meta(name="revised" content="01/03/2023")
+        meta(name="robots" content="index,follow")
+        title JAUS Property Services
+        link(rel="icon" type="image/png" href=require('./assets/favicon.png'))
+        link(href=require("styles/main.scss") rel="stylesheet")
+        script(src=require("index.js") defer="defer")
+    body 
+        main.main-container
+            nav#nav-site
+                a(hrer="#").logo
+                    img(src=require('./assets/logo-inline.svg')).responsive-img
+                div.link-list
+                    a(href="#home").waves-effect.waves-primary Home
+                    a(href="#services").waves-effect.waves-primary Services
+                    a(href="#partners").waves-effect.waves-primary Partners
+                    a(href="#contact").waves-effect.waves-primary Contact
+            
+            include ./pug/index-home.part.pug
+            include ./pug/index-services.part.pug
+            include ./pug/index-howItWorks.part.pug
+            include ./pug/index-sponsors.part.pug
+            include ./pug/index-contact.part.pug
+
+            footer#footer-site
+                p.text-center.px-15px © Copyright 2023 | JAUS Property Services | All right reserved.
