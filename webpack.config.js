@@ -13,6 +13,7 @@ module.exports = (env, argv) => {
 
         entry: {
             index: "./src/index.pug",
+            "service-eval": "./src/service-eval.pug",
         },
 
         output: {
